@@ -43,6 +43,26 @@ namespace ProgrammersBlog.Data.Concrete.EntityFramework.Mappings
 
             builder.HasOne<Role>(u => u.Role).WithMany(r => r.Users).HasForeignKey(u => u.RoleId);
             builder.ToTable("Users");
+
+            builder.HasData(new User
+            {
+                Id = 1,
+                RoleId = 1,
+                Name = "Burak Can",
+                SurName = "Yurdacan",
+                Username = "burakyurdacan",
+                Email = "burakcan@gmail.com",
+                IsActive = true,
+                IsDeleted = false,
+                CreatedByName = "InitialCreate",
+                CreatedDate = DateTime.Now,
+                ModifiedByName = "InitialCreate",
+                ModifiedDate = DateTime.Now,
+                Description = "İlk admin kullanıcısı",
+                Note = "Admin rolüne sahip kullanıcı",
+                PasswordHash = Encoding.ASCII.GetBytes("0192023a7bbd73250516f069df18b500"),
+                Picture = "https://images.generated.photos/8b0SE0ojszIQF1eZH2jF8OSGST4nTkqOaioXMWo7bwk/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MTI0MTc5LmpwZw.jpg"
+            });
         }
     }
 }

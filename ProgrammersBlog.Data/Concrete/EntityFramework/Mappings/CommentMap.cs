@@ -30,6 +30,49 @@ namespace ProgrammersBlog.Data.Concrete.EntityFramework.Mappings
 
             builder.HasOne<Article>(c => c.Article).WithMany(a => a.Comments).HasForeignKey(c => c.ArticleId);
             builder.ToTable("Comments");
+
+            builder.HasData
+                (
+                    new Comment
+                    {
+                        Id = 1,
+                        ArticleId = 1,
+                        Text = "Lorem Ipsum pasajlarının birçok çeşitlemesi vardır. Ancak bunların büyük bir çoğunluğu mizah katılarak veya rastgele sözcükler eklenerek değiştirilmişlerdir.",
+                        IsActive = true,
+                        IsDeleted = false,
+                        CreatedByName = "InitialCreate",
+                        CreatedDate = DateTime.Now,
+                        ModifiedByName = "InitialCreate",
+                        ModifiedDate = DateTime.Now,
+                        Note = "C# makale yorumu"
+                    },
+                    new Comment
+                    {
+                        Id = 2,
+                        ArticleId = 2,
+                        Text = "Lorem Ipsum pasajlarının birçok çeşitlemesi vardır. Ancak bunların büyük bir çoğunluğu mizah katılarak veya rastgele sözcükler eklenerek değiştirilmişlerdir.",
+                        IsActive = true,
+                        IsDeleted = false,
+                        CreatedByName = "InitialCreate",
+                        CreatedDate = DateTime.Now,
+                        ModifiedByName = "InitialCreate",
+                        ModifiedDate = DateTime.Now,
+                        Note = "C++ makale yorumu"
+                    },
+                    new Comment
+                    {
+                        Id = 3,
+                        ArticleId = 3,
+                        Text = "Lorem Ipsum pasajlarının birçok çeşitlemesi vardır. Ancak bunların büyük bir çoğunluğu mizah katılarak veya rastgele sözcükler eklenerek değiştirilmişlerdir.",
+                        IsActive = true,
+                        IsDeleted = false,
+                        CreatedByName = "InitialCreate",
+                        CreatedDate = DateTime.Now,
+                        ModifiedByName = "InitialCreate",
+                        ModifiedDate = DateTime.Now,
+                        Note = "Javascript makale yorumu"
+                    }
+                );
         }
     }
 }
