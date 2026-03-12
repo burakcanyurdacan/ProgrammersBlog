@@ -19,7 +19,8 @@ namespace ProgrammersBlog.Data.Concrete.EntityFramework.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=.\MSSQL; Database=ProgrammersBlog; Trusted_Connection=true; Connect Timeout=30; MultipleActiveResultSets=true;");
+            const string connectionString = @"Server=.\MSSQL;Initial Catalog=ProgrammersBlog;Integrated Security=True;TrustServerCertificate=True;MultipleActiveResultSets=True;";
+            optionsBuilder.UseSqlServer(connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
