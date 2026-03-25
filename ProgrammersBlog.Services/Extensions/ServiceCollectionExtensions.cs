@@ -20,6 +20,7 @@ namespace ProgrammersBlog.Services.Extensions
             serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
             serviceCollection.AddScoped<ICategoryService, CategoryManager>();
             serviceCollection.AddScoped<IArticleService, ArticleManager>();
+            serviceCollection.AddAutoMapper(System.Reflection.Assembly.GetExecutingAssembly());
             return serviceCollection;
         }
     }
